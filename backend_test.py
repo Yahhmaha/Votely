@@ -497,7 +497,7 @@ def run_all_tests():
     print(f"  - Duplicate Vote Prevention: {'✅ PASS' if duplicate_prevention else '❌ FAIL'}")
     
     print("\nXP and Achievement System:")
-    print(f"  - XP for Poll Creation (20 XP): {'✅ PASS' if xp_poll_creation else '❌ FAIL'}")
+    print(f"  - XP for Poll Creation (30 XP = 20 XP base + 10 XP achievement): {'✅ PASS' if xp_poll_creation else '❌ FAIL'}")
     print(f"  - XP for Voting (5 XP): {'✅ PASS' if xp_voting else '❌ FAIL'}")
     print(f"  - First Poll Achievement: {'✅ PASS' if first_poll else '❌ FAIL'}")
     
