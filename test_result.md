@@ -107,15 +107,18 @@ user_problem_statement: "Build a polling platform where users can create public 
 backend:
   - task: "User Authentication System"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented user registration and login with password hashing, user profile management"
+      - working: true
+        agent: "testing"
+        comment: "User registration and login endpoints working correctly. Registration creates new users with proper data, login validates credentials correctly, and invalid login attempts are properly rejected."
         
   - task: "Poll Creation and Management"
     implemented: true
