@@ -167,15 +167,18 @@ backend:
         
   - task: "Achievement System"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented achievement system with badges: First Poll Creator, Vote Master, Popular Creator, Viral Creator, Prolific Creator"
+      - working: true
+        agent: "testing"
+        comment: "Achievement system works correctly. Users receive the 'First Poll Creator' achievement when creating their first poll, with a 10 XP bonus. Achievement retrieval endpoint returns the correct achievements for users."
         
   - task: "Leaderboard System"
     implemented: true
