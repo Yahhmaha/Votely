@@ -122,15 +122,18 @@ backend:
         
   - task: "Poll Creation and Management"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented poll creation with multiple options, tags, and proper database storage"
+      - working: true
+        agent: "testing"
+        comment: "Poll creation endpoint works correctly. Users can create polls with multiple options and tags. Get polls endpoint returns all polls, and get poll by ID endpoint returns the correct poll details."
         
   - task: "Voting System"
     implemented: true
