@@ -340,7 +340,7 @@ def test_get_user_achievements(user_id=None):
         return None
 
 def test_xp_for_poll_creation():
-    """Test XP award for poll creation (20 XP)"""
+    """Test XP award for poll creation (20 XP + 10 XP for first poll achievement)"""
     print("\n=== Testing XP Award for Poll Creation ===")
     
     # Create a new user
@@ -365,11 +365,15 @@ def test_xp_for_poll_creation():
         return False
     
     xp_gained = updated_profile["xp"] - initial_xp
-    if xp_gained == 20:
-        print(f"✅ User gained 20 XP for poll creation (from {initial_xp} to {updated_profile['xp']})")
+    
+    # For the first poll, user gets 20 XP for creation + 10 XP for "First Poll Creator" achievement
+    expected_xp = 30
+    
+    if xp_gained == expected_xp:
+        print(f"✅ User gained {expected_xp} XP for poll creation (from {initial_xp} to {updated_profile['xp']})")
         return True
     else:
-        print(f"❌ User gained {xp_gained} XP instead of 20 XP for poll creation")
+        print(f"❌ User gained {xp_gained} XP instead of {expected_xp} XP for poll creation")
         return False
 
 def test_xp_for_voting():
