@@ -182,15 +182,18 @@ backend:
         
   - task: "Leaderboard System"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented leaderboard showing top users by XP with additional stats"
+      - working: true
+        agent: "testing"
+        comment: "Leaderboard system works correctly. The leaderboard endpoint returns users sorted by XP, and includes all relevant user data."
 
 frontend:
   - task: "User Authentication UI"
