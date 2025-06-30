@@ -152,15 +152,18 @@ backend:
         
   - task: "XP Point System"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented XP system: 20 XP for poll creation, 5 XP for voting, bonus XP for popular polls (10-100 XP based on votes)"
+      - working: true
+        agent: "testing"
+        comment: "XP system works correctly. Users receive 5 XP for voting. For poll creation, users receive 20 XP plus 10 XP from the 'First Poll Creator' achievement, totaling 30 XP for the first poll, which is the expected behavior."
         
   - task: "Achievement System"
     implemented: true
