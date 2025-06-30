@@ -619,10 +619,12 @@ function App() {
 }
 
 // App with Context Provider
-export default function AppWithProviders() {
+function AppWithProviders() {
   return (
     <AuthProvider>
       <App />
     </AuthProvider>
   );
 }
+
+export default AppWithProviders;
