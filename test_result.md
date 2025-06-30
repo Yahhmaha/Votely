@@ -137,15 +137,18 @@ backend:
         
   - task: "Voting System"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented voting with duplicate vote prevention, vote counting, and result calculation"
+      - working: true
+        agent: "testing"
+        comment: "Voting system works correctly. Users can vote on polls, and the system correctly prevents duplicate votes from the same user. Vote counts are properly updated."
         
   - task: "XP Point System"
     implemented: true
