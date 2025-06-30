@@ -225,24 +225,33 @@ def test_duplicate_vote(user_id=None, poll_id=None):
     """Test preventing duplicate votes from the same user"""
     print("\n=== Testing Duplicate Vote Prevention ===")
     
+    # Create a new user and poll for this test
+    user_profile = test_user_registration()
+    if not user_profile:
+        print("Failed to create test user")
+        return False
+    
+    user_id = user_profile["id"]
+    
+    poll = test_poll_creation(user_id)
+    if not poll:
+        print("Failed to create test poll")
+        return False
+    
+    poll_id = poll["id"]
+    
     # First vote should succeed
-    result = test_vote_on_poll(user_id, poll_id)
-    if not result:
+    vote_result = test_vote_on_poll(user_id, poll_id)
+    if not vote_result:
         print("First vote failed, cannot test duplicate prevention")
-        return None
+        return False
     
     # Second vote should fail
-    if not user_id and test_users:
-        user_id = test_users[0]["id"]
-    
-    if not poll_id and test_polls:
-        poll_id = test_polls[0]["id"]
-    
     # Get the poll to find an option ID
     poll = test_get_poll_by_id(poll_id)
     if not poll:
         print("Failed to retrieve poll")
-        return None
+        return False
     
     option_id = poll["options"][0]["id"]
     
